@@ -17,7 +17,6 @@ const Card = ({title, buttonText}) => {
     return (
         <section>
             <Titles title={title} />
-
             <Button text={text?buttonText:"Close"} onClick={changeText}/>
         </section>
     );

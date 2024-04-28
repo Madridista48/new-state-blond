@@ -42,6 +42,14 @@ const Main = () => {
         setTitle(prevState => !prevState)
     }
 
+    // fifth home-work
+    const [animation, setAnimation] = useState(true)
+    const startAnimation = (e) => {
+        e.preventDefault()
+        setAnimation(prevState => !prevState)
+    }
+
+
     return (
         <main className={css.main} id={"12"}>
             <section className={css.section}>
@@ -65,6 +73,14 @@ const Main = () => {
                 <Titles title={"Тортунчу"}/>
                 <h1>{!title?"Upps!":''}</h1>
                 <Button text={title ? "Close" : "Open"} onClick={showTitle}/>
+            </section>
+
+            <section className={css.section}>
+                <Titles title={"Бешинчи"}/>
+                <Button text={animation ? "Start" : "stop"} onClick={startAnimation}/>
+                <div>
+                    {!animation? <div className={css.loader}></div>:''}
+                </div>
             </section>
 
         </main>
