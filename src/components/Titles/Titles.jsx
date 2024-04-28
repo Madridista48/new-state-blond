@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 
+import css from './Titles.module.css'
 
 const Titles = ({ title }) => {
     return (
-        <h1>{title} уй тапшырма</h1>
+        <p className={css.title}>{title} уй тапшырма</p>
     );
 };
 
