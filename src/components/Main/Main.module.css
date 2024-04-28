@@ -1,0 +1,15 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 40px 10px;
+}
+.section{
+
+}
+.counter{
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+    margin: 0 20px;
+}
