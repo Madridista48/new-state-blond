@@ -35,6 +35,12 @@ const Main = () => {
         }
     }
 
+    // fourth home-work
+    const [title, setTitle] = useState(true)
+    const showTitle = (e) => {
+        e.preventDefault()
+        setTitle(prevState => !prevState)
+    }
 
     return (
         <main className={css.main} id={"12"}>
@@ -53,6 +59,12 @@ const Main = () => {
             <section className={css.section}>
                 <Titles title={"Учунчу"}/>
                 <input className={css.inputCheck} type="checkbox" onChange={changeBackground}/>
+            </section>
+
+            <section className={css.section}>
+                <Titles title={"Тортунчу"}/>
+                <h1>{!title?"Upps!":''}</h1>
+                <Button text={title ? "Close" : "Open"} onClick={showTitle}/>
             </section>
 
         </main>
