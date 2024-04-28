@@ -49,14 +49,20 @@ const Main = () => {
         setAnimation(prevState => !prevState)
     }
 
+    // sixth home-work
+    const [name,setName] = useState("HOME")
+
 
     return (
         <main className={css.main} id={"12"}>
+
+            {/*first home-work*/}
             <section className={css.section}>
                 <Titles title={"Биринчи"}/>
                 <Button text={text ? "Open" : "Close"} onClick={changeText}/>
             </section>
 
+            {/*second home-work*/}
             <section className={css.section}>
                 <Titles title={"Экинчи"}/>
                 <Button text={"Increment"} onClick={plusCount}/>
@@ -64,17 +70,20 @@ const Main = () => {
                 <Button text={"Decrement"} onClick={minusCount}/>
             </section>
 
+            {/*third home-work*/}
             <section className={css.section}>
                 <Titles title={"Учунчу"}/>
                 <input className={css.inputCheck} type="checkbox" onChange={changeBackground}/>
             </section>
 
+            {/*fourth home-work*/}
             <section className={css.section}>
                 <Titles title={"Тортунчу"}/>
-                <h1>{!title?"Upps!":''}</h1>
+                <p>{!title?"Upps!":''}</p>
                 <Button text={title ? "Close" : "Open"} onClick={showTitle}/>
             </section>
 
+            {/*fifth home-work*/}
             <section className={css.section}>
                 <Titles title={"Бешинчи"}/>
                 <Button text={animation ? "Start" : "stop"} onClick={startAnimation}/>
@@ -82,6 +91,18 @@ const Main = () => {
                     {!animation? <div className={css.loader}></div>:''}
                 </div>
             </section>
+
+            {/*sixth home-work*/}
+            <section className={css.section}>
+                <Titles title={"Алтынчы"}/>
+                <nav>
+                    <Button text={'HOME'} onClick={()=>setName('HOME')}/>
+                    <Button text={'ABOUT'} onClick={()=>setName('ABOUT')}/>
+                    <Button text={'CONTACT'} onClick={()=>setName('CONTACT')}/>
+                    <p>{name}</p>
+                </nav>
+            </section>
+
 
         </main>
     );
