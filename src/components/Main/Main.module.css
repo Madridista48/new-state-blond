@@ -48,5 +48,19 @@
 
 .sixthBtn{
     display: flex;
+}
 
+.seventhMenu{
+    display: flex;
+    list-style: none;
+    column-gap: 10px;
+}
+.seventhItem{
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.seventhItem:hover{
+    background: darkgrey;
 }

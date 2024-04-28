@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {lazy, useState} from "react";
 import Titles from "../Titles/Titles.jsx";
 import Button from "../UI/Button/Button.jsx";
 import css from './Main.module.css'
@@ -52,6 +52,39 @@ const Main = () => {
     // sixth home-work
     const [name,setName] = useState("HOME")
 
+    // seventh home-work
+    const seventh = [
+        {
+            id: 1,
+            title: "item 1"
+        },
+        {
+            id: 2,
+            title: "item 2"
+        },
+        {
+            id: 3,
+            title: "item 3"
+        },
+        {
+            id: 4,
+            title: "item 4"
+        },
+        {
+            id: 5,
+            title: "item 5"
+        },
+    ]
+    let itemText = ''
+
+    const showItem = (props) => {
+        seventh.forEach((item)=>{
+            if (item.id === props){
+                itemText = item.title
+            }
+        })
+    }
+
 
     return (
         <main className={css.main} id={"12"}>
@@ -79,7 +112,7 @@ const Main = () => {
             {/*fourth home-work*/}
             <section className={css.section}>
                 <Titles title={"Тортунчу"}/>
-                <p>{!title?"Upps!":''}</p>
+                <p>{!title ? "Upps!" : ''}</p>
                 <Button text={title ? "Close" : "Open"} onClick={showTitle}/>
             </section>
 
@@ -88,7 +121,7 @@ const Main = () => {
                 <Titles title={"Бешинчи"}/>
                 <Button text={animation ? "Start" : "stop"} onClick={startAnimation}/>
                 <div>
-                    {!animation? <div className={css.loader}></div>:''}
+                    {!animation ? <div className={css.loader}></div> : ''}
                 </div>
             </section>
 
@@ -96,11 +129,22 @@ const Main = () => {
             <section className={css.section}>
                 <Titles title={"Алтынчы"}/>
                 <nav>
-                    <Button text={'HOME'} onClick={()=>setName('HOME')}/>
-                    <Button text={'ABOUT'} onClick={()=>setName('ABOUT')}/>
-                    <Button text={'CONTACT'} onClick={()=>setName('CONTACT')}/>
+                    <Button text={'HOME'} onClick={() => setName('HOME')}/>
+                    <Button text={'ABOUT'} onClick={() => setName('ABOUT')}/>
+                    <Button text={'CONTACT'} onClick={() => setName('CONTACT')}/>
                     <p>{name}</p>
                 </nav>
+            </section>
+
+            {/*seventh home-work*/}
+            <section className={css.section}>
+                <Titles title={"Жетинчи"}/>
+                <ul className={css.seventhMenu}>
+                    {seventh.map(item=>(
+                        <li className={css.seventhItem} key={item.id} onClick={()=>showItem(item.id)}>{item.title}</li>
+                    ))}
+                </ul>
+                <span>You selected: {itemText}</span>
             </section>
 
 
