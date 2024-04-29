@@ -83,8 +83,9 @@ const Main = () => {
                 itemText = item.title
             }
         })
-    }
+        document.getElementById('itemText').textContent = itemText
 
+    }
 
     return (
         <main className={css.main} id={"12"}>
@@ -139,12 +140,14 @@ const Main = () => {
             {/*seventh home-work*/}
             <section className={css.section}>
                 <Titles title={"Жетинчи"}/>
-                <ul className={css.seventhMenu}>
-                    {seventh.map(item=>(
-                        <li className={css.seventhItem} key={item.id} onClick={()=>showItem(item.id)}>{item.title}</li>
+
+                <div className={css.seventhMenu}>
+                    {seventh.map(item => (
+                        <div className={css.seventhItem} key={item.id}
+                            onClick={() => showItem(item.id)}>{item.title}</div>
                     ))}
-                </ul>
-                <span>You selected: {itemText}</span>
+                </div>
+                <span>You selected: <span id={'itemText'}></span></span>
             </section>
 
 
