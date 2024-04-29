@@ -86,6 +86,49 @@ const Main = () => {
 
     }
 
+    // eights home-work
+    // const [choose,setChoose] = useState("HOME")
+    const tasks = [
+        {
+            title: 'Task',
+            isCompleted: false,
+            id: 1,
+        },
+        {
+            title: 'Task',
+            isCompleted: true,
+            id: 2,
+        },
+        {
+            title: 'Task',
+            isCompleted: false,
+            id: 3,
+        },
+        {
+            title: 'Task',
+            isCompleted: true,
+            id: 4,
+        },
+    ]
+
+    const sortTask = (data) => {
+        let html = ''
+        data.map((item)=>{
+            html += `
+                if(item.isCompleted){
+                    <div key={item.id}>{item.title } {item.id} {item.isCompleted? "COMPLETED": "NOT COMPLETED"}</div>
+                }
+                if (!item.isCompleted){
+                    <div key={item.id}>{item.title } {item.id} {item.isCompleted? "COMPLETED": "NOT COMPLETED"}</div>
+                }
+                <div key={item.id}>{item.title } {item.id} {item.isCompleted? "COMPLETED": "NOT COMPLETED"}</div>
+
+            `
+        })
+
+        document.querySelector('#taskList').innerHTML = html
+    }
+
     return (
         <main className={css.main} id={"12"}>
 
@@ -142,13 +185,27 @@ const Main = () => {
                 <div className={css.seventhMenu}>
                     {seventh.map(item => (
                         <div className={css.seventhItem} key={item.id}
-                            onClick={() => showItem(item.id)}>{item.title}</div>
+                             onClick={() => showItem(item.id)}>{item.title}</div>
                     ))}
                 </div>
                 <span>You selected: <span id={'itemText'}></span></span>
             </section>
 
+            {/*eights home-work*/}
+            <section className={css.section}>
+                <Titles title={"Сегизинчи"}/>
+                <nav>
+                    <Button text={'ALL'} onClick={()=> sortTask(tasks)}/>
+                    <Button text={'COMPLETED'} onClick={()=> sortTask(tasks)}/>
+                    <Button text={'UNCOMPLETED'} onClick={()=> sortTask(tasks)}/>
+                    <div id={"taskList"}>
+                        {tasks.map((item)=>(
+                            <div key={item.id}>{item.title } {item.id} {item.isCompleted? "COMPLETED": "NOT COMPLETED"}</div>
+                        ))}
+                    </div>
 
+                </nav>
+            </section>
         </main>
     );
 };
