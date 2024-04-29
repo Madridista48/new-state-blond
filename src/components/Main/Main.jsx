@@ -76,7 +76,6 @@ const Main = () => {
         },
     ]
     let itemText = ''
-
     const showItem = (props) => {
         seventh.forEach((item)=>{
             if (item.id === props){
@@ -140,7 +139,6 @@ const Main = () => {
             {/*seventh home-work*/}
             <section className={css.section}>
                 <Titles title={"Жетинчи"}/>
-
                 <div className={css.seventhMenu}>
                     {seventh.map(item => (
                         <div className={css.seventhItem} key={item.id}
